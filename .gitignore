@@ -1,0 +1,12 @@
+.idea
+.idea/
+.DS_Store
+node_modules/
+.project
+dist
+/public/upload/
+/public/xlsx/
+dist/*
+src/config/*.tmp
+src/config/env.js
+npm-debug.log

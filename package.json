@@ -1,0 +1,26 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.5.2",
+    "koa-body": "^4.0.4",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.3",
+    "pm2": "^3.0.3"
+  },
+  "devDependencies": {
+    "moment": "^2.22.2",
+    "node-xlsx": "^0.12.1"
+  }
+}
