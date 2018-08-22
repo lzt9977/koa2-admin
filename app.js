@@ -6,6 +6,9 @@ const config = require('./config/default.js');
 const app = new Koa();
 const routers = require('./routers/index');
 const koaStatic = require('koa-static');
+const moment = require('moment');
+
+
 
 
 
@@ -22,7 +25,7 @@ app.use(cors({
   maxAge: 5,
   credentials: true,
   allowMethods: ['GET', 'POST', 'DELETE'],
-  allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
+  allowHeaders: ['Content-Type', 'token'],
 }))
 
 
@@ -51,11 +54,13 @@ app.use(koaBody({
 
 
 
-// 初始化路由中间件
-app.use(routers.routes()).use(routers.allowedMethods())
 
 
+
+app
+  .use(routers.routes())
+  .use(routers.allowedMethods());
 
 app.listen(config.port)
 
-console.log(`listening on port ${config.port}`)
+console.log(`当前端口: ${config.port}  服务器时间: `+moment().format("YYYY-MM-DD h:mm:ss"))

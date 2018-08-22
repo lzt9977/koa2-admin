@@ -1,6 +1,6 @@
 const userModel = require('../lib/mysql.js');
-const moment=require('moment');
 const fs = require('fs');
+const moment = require('moment');
 const xlsx = require('node-xlsx').default;
 module.exports = {
     async list( ctx ) {
@@ -194,7 +194,6 @@ module.exports = {
                     })
                 }
 
-                
                 
                 ctx.body = {
                     code: 0,
