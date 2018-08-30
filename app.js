@@ -9,6 +9,36 @@ const koaStatic = require('koa-static');
 const moment = require('moment');
 
 
+const log4js = require('log4js');
+
+log4js.configure({
+  appenders: {
+    file: {
+      type: 'file',
+      filename: 'logs/important.log',
+      maxLogSize: 10 * 1024 * 1024, // = 10Mb
+      numBackups: 5, // keep five backup files
+      compress: true, // compress the backups
+      encoding: 'utf-8',
+      mode: 0o0640,
+      flags: 'w+'
+    },
+    dateFile: {
+      type: 'dateFile',
+      filename: 'logs/more-important.log',
+      pattern: 'yyyy-MM-dd-hh',
+      compress: true
+    },
+    // out: {
+    //   type: 'stdout'
+    // }
+  },
+  categories: {
+    default: { appenders: ['file', 'dateFile'], level: 'trace' }
+  }
+});
+
+
 
 
 

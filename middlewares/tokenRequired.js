@@ -6,7 +6,6 @@ module.exports = function () {
 
       let token = ctx.request.header.token
 
-
       await jwt.verify(token, 'pgt',async (err, decoded) => {
           if(err){
             ctx.body = {

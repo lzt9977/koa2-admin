@@ -8,9 +8,10 @@ const tokenRequired = require('../middlewares/tokenRequired.js')();
 
 
 router.use(gateway())  // 启用网关中心
-  
+
 
 const routers = router.post('/user',  tokenRequired, user.route)
+                .post('/user/getUserInfo',tokenRequired, user.getUserInfo)
                 .post('/goods/ListPage',  tokenRequired, goods.list) // 商品列表 筛选
                 .post('/goods/listCategory',  tokenRequired, goods.getGoodsCategory) // 商品获取分类筛选
                 .post('/goods/shelf',  tokenRequired, goods.shelf) // 商品上下架

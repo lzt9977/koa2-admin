@@ -20,8 +20,8 @@ module.exports = {
                 if(str === result[0].password){
 
                     let token = jwt.sign({
-                        exp: Math.floor(Date.now() / 1000) + (60 * 60),
-                        data: result[0].mobile
+                        exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60),
+                        mobile: result[0].mobile
                     }, 'pgt');
 
                     ctx.body = {
